@@ -1,0 +1,29 @@
+---
+title: "Patient Health Dashboard"
+summary: "A secure, HIPAA-compliant patient portal for tracking medical history and appointments."
+status: "Archived"
+role: "Frontend Engineer"
+tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL"]
+public_visibility: true
+has_private_notes: false
+links: []
+dates: "2022 - 2023"
+tags: ["Healthcare", "Frontend", "UI/UX"]
+---
+
+## Problem / Context
+Patients needed a modern, mobile-friendly way to access their test results, message their doctors securely, and manage upcoming appointments without calling the clinic.
+
+## What I Built
+I led the frontend architecture and development of the new patient portal using Next.js. We focused heavily on accessibility (WCAG 2.1 AA) and ensuring the interface was intuitive for users of all ages.
+
+## Architecture / Implementation
+- **Frontend**: Next.js, React Query for server-state management.
+- **Styling**: Tailwind CSS with completely customized accessible color palettes.
+- **Data Fetching**: Apollo GraphQL client to interact with the clinic's secure medical records system.
+
+## Challenges & Solutions
+Ensuring strict HIPAA compliance on the client side meant being exceptionally careful with state management and caching. I configured React Query to aggressively clear its cache on logout or inactivity timeouts.
+
+## Outcomes & Lessons Learned
+The portal was successfully rolled out to over 10,000 active patients within its first month. We saw a 30% reduction in inbound phone calls to the clinic for test results.

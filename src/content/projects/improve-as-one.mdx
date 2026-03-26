@@ -1,0 +1,29 @@
+---
+title: "Improve As One (IAO)"
+summary: "A fullstack platform featuring a React frontend and Django backend, designed for structured content delivery and role-based user management."
+status: "In Progress"
+role: "Fullstack Engineer"
+tech_stack: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Django", "Python"]
+public_visibility: true
+has_private_notes: false
+links: []
+dates: "2024 - Present"
+tags: ["Fullstack", "Web App", "Portal"]
+---
+
+## Problem / Context
+The project required a scalable platform capable of handling complex role-based access for diverse user groups (admins, experts, regular users) while ensuring secure content management. The goal was to build a robust system that streamlined content delivery and facilitated clear administrative controls and reporting features.
+
+## Architecture / Implementation
+To meet these requirements, we adopted a decoupled architecture:
+- **Frontend**: A modern web application built with React, Vite, Redux Toolkit, and styled with Tailwind CSS to ensure a responsive and accessible user interface.
+- **Backend**: A RESTful API built with Django 5 and Python 3.12, utilizing PostgreSQL (via Azure/local SQLite) to handle data persistence securely.
+- **Infrastructure & Communication**: The application leverages Azure Communication Services for handling critical email and notification flows, integrated via Bicep and Kubernetes manifests for deployment.
+
+## Challenges & Solutions
+One of the primary challenges was implementing GDPR-compliant account deletion and handling the intricate state management associated with various distinct user roles. 
+
+To address this, we developed a comprehensive anonymization strategy that securely wipes Personally Identifiable Information (PII) upon user deletion, while preserving non-identifying audit logs and keeping published content intact under a system account. We also structured the React frontend heavily around Redux Toolkit for predictable state transitions, especially around authentication and role-based feature gating.
+
+## Outcomes
+The resulting platform provides a highly maintainable fullstack architecture. The clear separation of concerns between the robust Django backend and the dynamic, responsive React frontend enables rapid iteration, secure authentication flows, and detailed administrative oversight.

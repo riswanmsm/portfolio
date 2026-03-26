@@ -1,0 +1,58 @@
+---
+title: "Continuing Bonds"
+summary: "A Continuing Bonds toolkit web application for bereavement support and education."
+status: "Live"
+role: "Lead Fullstack Developer"
+tech_stack: ["Django", "React", "PostgreSQL", "Nginx", "Docker"]
+public_visibility: true
+has_private_notes: true
+links: ["https://cb-toolkit.bradford.ac.uk/"]
+dates: "2023 - Present"
+tags: ["Healthcare", "Education", "Web App"]
+---
+import PrivateNotes from "../../components/PrivateNotes.astro";
+
+## Problem / Context
+The Continuing Bonds project required a stable, accessible toolkit to provide bereavement support and education. Built in collaboration with Bradford University, the platform needed to present specialized modules safely and track engagement.
+
+## What I Built
+Developed a robust Django REST backend partnered with a modern React frontend. Key features included secure two-factor authentication for admins, custom reporting, and a seamless client-side routing experience using GA4.
+
+## Architecture / Implementation
+- **Frontend**: React (Create React App), Context API, Axios.
+- **Backend**: Django 3.2, Django REST Framework, Knox for Token Auth.
+- **Infra**: Docker Compose, Nginx reverse proxy, MySQL on Azure VMs.
+- **Integrations**: Google Analytics 4 (Enhanced Measurement).
+
+## Challenges & Solutions
+We encountered complex constraints with browser autofill interfering with customized OTP codes. Solved by deeply integrating explicit HTML5 `autoComplete` attributes. Safely managed CORS and TLS termination via Nginx.
+
+## Outcomes & Lessons Learned
+The project successfully launched to support academic outreach. Migrating from an embedded Nginx container to host-level routing vastly improved security and deployment speeds.
+
+---
+
+<PrivateNotes>
+### Private Developer Notes
+
+**Local Setup**:
+```bash
+# Backend
+cd server
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+
+# Frontend (requires legacy OpenSSL for Node 18+)
+cd client
+export NODE_OPTIONS=--openssl-legacy-provider
+npm start
+```
+
+**Deployment**:
+Run the deployment script on the Azure VM:
+```bash
+APP_DIR=/var/www/rd-cb-app BRANCH=main bash /var/www/rd-cb-app/scripts/deploy.sh
+```
+</PrivateNotes>

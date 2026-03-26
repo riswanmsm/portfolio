@@ -1,0 +1,52 @@
+---
+title: "AI Trading Bot"
+summary: "An automated algorithmic trading bot leveraging machine learning models for market prediction."
+status: "Live"
+role: "Fullstack Developer"
+tech_stack: ["Python", "FastAPI", "React", "PostgreSQL", "Redis"]
+public_visibility: true
+has_private_notes: true
+links: ["https://github.com/runedigital/ai-trading-bot-demo"]
+dates: "2024 - Present"
+tags: ["FinTech", "AI/ML", "Backend"]
+---
+import PrivateNotes from "../../components/PrivateNotes.astro";
+
+## Problem / Context
+The goal was to build an automated, high-frequency trading bot that leverages machine learning models to analyze market sentiment and standard indicators to execute trades without human intervention. 
+
+## What I Built
+I engineered a highly scalable Python backend using FastAPI that ingests live market data streams via WebSockets. The system uses a specialized React dashboard for monitoring trade executions, PnL (profit and loss), and system health in real-time.
+
+## Architecture / Implementation
+- **Frontend**: React, Tailwind CSS, Recharts for graphing.
+- **Backend**: FastAPI (Python), Pandas, Scikit-learn for basic ML models.
+- **Database**: PostgreSQL for trade history, Redis for caching live order book states.
+- **Infrastructure**: Containerized using Docker and deployed on AWS ECS.
+
+## Challenges & Solutions
+One major challenge was optimizing the WebSocket data ingestion to handle thousands of events per second. I implemented a Redis pub/sub layer acting as a buffer to offload processing, significantly reducing latency.
+
+## Outcomes & Lessons Learned
+The platform currently processes thousands of simulated trades per day with a sub-50ms execution latency. This project massively deepened my asynchronous programming and DevOps skills.
+
+---
+
+<PrivateNotes>
+### Private Developer Notes
+
+**Local Setup**:
+```bash
+# Backend
+cd bot-engine
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+# Frontend
+cd dashboard
+npm install
+npm run dev
+```
+</PrivateNotes>
